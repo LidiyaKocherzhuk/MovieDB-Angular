@@ -1,0 +1,18 @@
+<div id="header">
+  <div class="navBar">
+
+    <div class="genres" (mousemove)="showGenres()">
+      <div *ngIf="move">
+        <app-genre *ngFor="let genre of genres" [genre]="genre"></app-genre>
+      </div>
+    </div>
+
+    <div class="FirstPage"></div>
+
+  </div>
+
+  <div class="searchBar"></div>
+
+  <div class="userBar"></div>
+
+</div>
