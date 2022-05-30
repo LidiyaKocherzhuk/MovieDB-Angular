@@ -21,4 +21,8 @@ export class HeaderComponent implements OnInit {
   showGenres() {
     this.move = !this.move;
   }
+
+  closeGenres() {
+    this.move = !this.move;
+  }
 }

@@ -1,0 +1,11 @@
+<div id="carousel">
+  <button class="prev" (click)="prev(moviesBlock)"><mat-icon>keyboard_arrow_left</mat-icon></button>
+  <div class="window" #window>
+    <div class="moviesBlock" #moviesBlock>
+      <app-movies-list-card *ngFor="let movie of movies" [movie]="movie"></app-movies-list-card>
+    </div>
+  </div>
+  <button class="next" (click)="next(moviesBlock)"><mat-icon>keyboard_arrow_right</mat-icon></button>
+
+</div>
+

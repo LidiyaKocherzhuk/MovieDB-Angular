@@ -1,0 +1,40 @@
+#carousel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.window {
+  background: #ced4da;
+  overflow: hidden;
+}
+button {
+  width: 80px;
+  position: absolute;
+  background: none;
+  border: none;
+}
+.prev {
+  left: 0;
+  z-index: 1;
+}
+.next {
+right: 0;
+  z-index: 1;
+}
+mat-icon {
+  width: 80px;
+  height: 100%;
+  border-radius: 50%;
+  font-size: 80px;
+  color: #ffffff4d;
+  /*text-shadow: 0 0 20px white;*/
+}
+mat-icon:hover {
+  color: white;
+  text-shadow: 0 0 20px white;
+}
+.moviesBlock {
+  display: flex;
+  transition: 1s;
+}

@@ -1,8 +1,102 @@
 #header {
-  height: 50px;
+  width: 80%;
+  height: 60px;
+  background: white;
+  display: flex;
+  align-items: center;
 }
+
+.navBar {
+  width: 30%;
+  display: flex;
+}
+
 .genres {
-  width: 20px;
-  height: 20px;
+  width: 30%;
+  height: 60px;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.genres span {
+  width: 25px;
+  height: 4px;
+  background: #343434;
+  border-radius: 5px;
+  position: relative;
+}
+
+.genres span::before, .genres span::after {
+  position: absolute;
+  content: '';
+  width: 25px;
+  height: 4px;
+  background: #343434;
+  border-radius: 5px;
+}
+
+.genres span::before {
+  top: 8px;
+}
+
+.genres span::after {
+  bottom: 8px;
+}
+
+.dropDownGenres {
+  position: absolute;
+  top: 60px;
+  width: 150px;
+  max-height: 250px;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #c0c0c02e;
+  box-shadow: 0 0 20px 0 #58585878;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.firstPage {
+  width: 80%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.firstPage img {
+  width: 90%;
+}
+
+.searchBar {
+  width: 50%;
+  height: 40px;
+  margin: 0 20px;
+  display: flex;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.searchBar .form-control {
+  border: none;
+}
+.searchBar button {
+  height: 100%;
+  width: 40%;
+  border: none;
+  box-shadow: none;
+  border-radius: 10px;
+  background: none;
+  margin-right: 5px;
+}
+
+.userBar {
+  width: 20%;
+  height: 40px;
   background: black;
+  margin: 0 20px;
 }

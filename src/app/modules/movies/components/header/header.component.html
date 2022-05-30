@@ -1,18 +1,26 @@
 <div id="header">
   <div class="navBar">
 
-    <div class="genres" (mousemove)="showGenres()">
-      <div *ngIf="move">
+    <div class="genres" (mouseenter)="showGenres()" (mouseleave)="closeGenres()">
+      <div *ngIf="move" class="dropDownGenres">
         <app-genre *ngFor="let genre of genres" [genre]="genre"></app-genre>
       </div>
+      <span></span>
     </div>
 
-    <div class="FirstPage"></div>
+    <div class="firstPage">
+      <a [routerLink]="['']"><img
+        src="https://demo.joomshaper.com/2016/moview/templates/shaper_moview/images/presets/preset1/logo.png"
+        alt="moviesIcon"></a>
+    </div>
 
   </div>
 
-  <div class="searchBar"></div>
+  <div class="searchBar">
+    <div class="searchMovie">movies</div>
+    <input class="form-control" type="text" placeholder="Default input">
+    <button><mat-icon>youtube_searched_for</mat-icon></button>
+  </div>
 
   <div class="userBar"></div>
-
 </div>

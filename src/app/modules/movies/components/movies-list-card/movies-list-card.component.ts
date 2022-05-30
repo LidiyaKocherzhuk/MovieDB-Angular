@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { environment } from '../../../../../environments/environment';
+import { IMovie } from '../../interfaces/movie.interface';
 
 @Component({
   selector: 'app-movies-list-card',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviesListCardComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+    movie: IMovie;
+  imagePath: string = environment.imageApi;
+  innerWidth:number = window.innerWidth / 5
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

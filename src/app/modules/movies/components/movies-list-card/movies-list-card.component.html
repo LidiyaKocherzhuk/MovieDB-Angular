@@ -1,1 +1,6 @@
-<p>movies-list-card works!</p>
+<div class="movieCard" [ngStyle]="{
+'background-image': 'url(' + imagePath + movie.backdrop_path + ')', 'width': innerWidth + 'px'}" >
+  <div class="voteAverage d-flex"><mat-icon class="star">star</mat-icon>{{movie.vote_average}}/{{movie.vote_count}}</div>
+  <h4 class="title">{{movie.title}}</h4>
+  <p>release: {{movie.release_date}}</p>
+</div>
