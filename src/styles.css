@@ -12,3 +12,6 @@ app-header, app-latest-movie {
 app-genre {
   margin: 3px;
 }
+app-movies-list-card {
+  width: fit-content;
+}

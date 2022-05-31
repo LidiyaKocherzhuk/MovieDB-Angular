@@ -11,13 +11,25 @@ export class MoviesListCardComponent implements OnInit {
 
   @Input()
     movie: IMovie;
+  @Input()
+    list: string
+  status = false;
   imagePath: string = environment.imageApi;
-  innerWidth:number = window.innerWidth / 5
+  innerWidth:number
 
   constructor() {
   }
 
   ngOnInit(): void {
+    if (this.list === 'popular') {
+      this.innerWidth = window.innerWidth / 5;
+    }
+    if (this.list === 'latest') {
+      this.innerWidth = ((window.innerWidth - (window.innerWidth / 100 * 20)) / 100 * 25) - 23.3;
+      this.status = true;
+    } else {
+      this.innerWidth = ((window.innerWidth - (window.innerWidth / 100 * 25)) / 100 * 25);
+    }
   }
 
 }

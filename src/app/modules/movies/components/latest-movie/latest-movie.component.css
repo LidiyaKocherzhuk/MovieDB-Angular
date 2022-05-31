@@ -1,12 +1,40 @@
 #spotlight {
   width: 80%;
-  margin-top: 50px;
 }
-.blockHeader {
+.blockHeader, .blockHeader div, a {
   display: flex;
   align-items: flex-end;
 }
-img {
-  width: 100px;
+.blockHeader {
+  justify-content: space-between;
+  margin: 20px 0 5px;
+}
+.blockHeader div {
+  width: 80%;
+}
+.blockHeader img {
+  width: 80px;
   margin-right: 20px;
+}
+.blockHeader a {
+  text-decoration: none;
+  color: black;
+  width: 20%;
+  justify-content: end;
+}
+mat-icon {
+  height: 20px;
+  color: cornflowerblue;
+}
+hr {
+  margin: 0;
+}
+button {
+  width: 10%;
+  background: none;
+  border: none;
+}
+.buttons {
+  margin: 10px 0 20px;
+  display: flex;
 }

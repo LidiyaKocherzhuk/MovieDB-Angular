@@ -2,6 +2,7 @@ import { IMovie } from './movie.interface';
 
 
 export interface IMovieDetails extends IMovie {
+  homepage: string;
   production_companies: production_companies[];
   production_countries: production_countries[];
   spoken_languages: spoken_languages[];

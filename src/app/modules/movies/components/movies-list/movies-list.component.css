@@ -1,0 +1,70 @@
+#movieList, .moviesBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerBlock {
+  display: flex;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  height: 25vh;
+  margin-bottom: 30px;
+  box-shadow: inset 0 -4rem 10rem black;
+}
+
+.headerBlock img {
+  width: 60px;
+  margin: 0 30px 30px 50px;
+}
+
+.headerBlock div {
+
+}
+.headerBlock h2 {
+  color: white;
+  font-family: serif;
+
+}
+
+.pathHome {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+.pathHome p{
+  margin: 0;
+}
+
+mat-icon {
+  font-size: 20px;
+}
+
+.headerBlock a {
+  color: white;
+  text-decoration: none;
+}
+
+.moviesBlock {
+  width: 80%;
+}
+
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 10px;
+}
+
+.pagesBtn {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+button {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+}

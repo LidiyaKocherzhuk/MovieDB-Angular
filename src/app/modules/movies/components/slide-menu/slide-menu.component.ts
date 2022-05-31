@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MoviesService } from '../../services/movies.service';
+import { Component, Input, OnInit } from '@angular/core';
+
 import { IMovie } from '../../interfaces/movie.interface';
 
 @Component({
@@ -11,13 +11,15 @@ export class SlideMenuComponent implements OnInit {
 
   blockWight: number;
   offset: number = 0;
-  movies: IMovie[];
+  @Input()
+    movies: IMovie[];
+  @Input()
+    list: string
 
-  constructor(private moviesService: MoviesService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.moviesService.getPopular().subscribe(({ results }) => this.movies = results);
   }
 
   prev(moviesBlock: HTMLDivElement) {
