@@ -5,13 +5,13 @@
   padding: 0;
   box-sizing: border-box;
 }
-app-header, app-latest-movie {
+app-latest-movie {
   display: flex;
   justify-content: center;
 }
 app-genre {
   margin: 3px;
 }
-app-movies-list-card {
+app-movies-list-card, app-movie-card {
   width: fit-content;
 }

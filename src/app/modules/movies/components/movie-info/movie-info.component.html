@@ -1,1 +1,10 @@
-<p>movie-info works!</p>
+<!--<a href="{{homePage}}">home</a>-->
+<div id="detailsPage" *ngIf="movie">
+  <div class="poster" [ngStyle]="{'background-image': 'url(' + imagePath + movie.backdrop_path + ')'}">
+
+  </div>
+  <div class="description">
+    <img src="{{imagePath+movie.poster_path}}" alt="">
+
+  </div>
+</div>

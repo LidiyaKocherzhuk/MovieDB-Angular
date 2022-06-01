@@ -23,12 +23,12 @@ export class MoviesListCardComponent implements OnInit {
   ngOnInit(): void {
     if (this.list === 'popular') {
       this.innerWidth = window.innerWidth / 5;
+      console.log(this.innerWidth);
     }
     if (this.list === 'latest') {
       this.innerWidth = ((window.innerWidth - (window.innerWidth / 100 * 20)) / 100 * 25) - 23.3;
       this.status = true;
-    } else {
-      this.innerWidth = ((window.innerWidth - (window.innerWidth / 100 * 25)) / 100 * 25);
+      console.log(this.innerWidth);
     }
   }
 

@@ -1,0 +1,12 @@
+.poster {
+  height: 60vh;
+  width: 100%;
+  background-size: cover;
+  background-position: top;
+}
+.description {
+  width: 80%;
+}
+img {
+  width: 30%;
+}

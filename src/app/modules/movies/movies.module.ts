@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MoviesRoutingModule } from './movies-routing.module';
 import { MoviesService } from './services/movies.service';
+import { DataService } from './services/data.service';
+import {MovieDetailsResolver} from "./services/resolver/movie-details.resolver";
 
 @NgModule({
   declarations: [
@@ -16,10 +18,10 @@ import { MoviesService } from './services/movies.service';
     MoviesRoutingModule,
 
   ],
-  exports: [
-  ],
   providers: [
     MoviesService,
+    DataService,
+    MovieDetailsResolver,
   ]
 })
 export class MoviesModule {

@@ -9,4 +9,5 @@ export const urls = {
   nowPlaying: `${API}/movie/now_playing?api_key=${apiKey}`,
   topRated: `${API}/movie/top_rated?api_key=${apiKey}`,
   upcoming: `${API}/movie/upcoming?api_key=${apiKey}`,
+  search: `${API}/search/movie?api_key=${apiKey}`,
 }

@@ -18,7 +18,7 @@
     <div class="sort"></div>
 
     <div class="movies">
-      <app-movies-list-card *ngFor="let movie of movies" [movie]="movie"></app-movies-list-card>
+      <app-movie-card *ngFor="let movie of movies" [id]="movie.id"></app-movie-card>
     </div>
 
     <div class="pagesBtn">

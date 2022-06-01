@@ -1,0 +1,11 @@
+<div id="movieCard" *ngIf="movie">
+  <img src="{{imagePath+movie.poster_path}}" alt="movie image">
+    <div class="voteAverage d-flex">
+      <mat-icon class="star">star</mat-icon>
+      {{movie.vote_average}}/{{movie.vote_count}}
+    </div>
+    <h5 class="title">{{movie.title}}</h5>
+    <div class="genres">
+      <span *ngFor="let genre of movie.genres">{{genre.name}}, </span>
+    </div>
+</div>

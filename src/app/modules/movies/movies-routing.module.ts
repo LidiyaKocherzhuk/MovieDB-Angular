@@ -15,6 +15,8 @@ import { GenreComponent } from './components/genre/genre.component';
 import { SlideMenuComponent } from './components/slide-menu/slide-menu.component';
 import { LatestMovieComponent } from './components/latest-movie/latest-movie.component';
 import { HomeComponent } from './myLayout/home/home.component';
+import { MovieCardComponent } from './components/movie-card/movie-card.component';
+import {MovieDetailsResolver} from "./services/resolver/movie-details.resolver";
 
 
 const routes: Routes = [
@@ -23,6 +25,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
       { path: 'movieList', component: MoviesListComponent },
+      { path: 'details', resolve: { data: MovieDetailsResolver }, component: MovieInfoComponent },
 
     ]
   },
@@ -42,6 +45,8 @@ const routes: Routes = [
     LatestMovieComponent,
     SlideMenuComponent,
     HomeComponent,
+    MovieCardComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -1,22 +1,21 @@
-import {Component, OnInit, AfterViewInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {MoviesService} from '../../services/movies.service';
-import {IMovie} from '../../interfaces/movie.interface';
-import {environment} from '../../../../../environments/environment';
-import {DataService} from "../../services/data.service";
+import { MoviesService } from '../../services/movies.service';
+import { IMovie } from '../../interfaces/movie.interface';
+import { environment } from '../../../../../environments/environment';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-movies-list',
   templateUrl: './movies-list.component.html',
   styleUrls: ['./movies-list.component.css']
 })
-export class MoviesListComponent implements OnInit, AfterViewInit{
+export class MoviesListComponent implements OnInit {
 
   movies: IMovie[];
   imagePath: string = environment.imageApi;
   page: number = 1;
   totalPages: number = 500;
-  title: string;
 
   constructor(private moviesService: MoviesService, private dataService: DataService) {
   }
@@ -24,13 +23,15 @@ export class MoviesListComponent implements OnInit, AfterViewInit{
   ngOnInit(): void {
     this.moviesService.getAll(this.page).subscribe(value =>  {
       this.movies = value.results;
-      console.log(value)
-      console.log(value.results)
     });
-  }
+    this.dataService.storage.subscribe(value => {
 
-  ngAfterViewInit(): void {
-    this.dataService.storage.subscribe(value => this.title = value)
+      if (value) {
+        this.moviesService.search(this.page, value).subscribe(value => this.movies = value.results);
+      }
+
+    });
+
   }
 
   pageOneBtn() {
@@ -38,7 +39,7 @@ export class MoviesListComponent implements OnInit, AfterViewInit{
       return;
     }
     this.page -= 1;
-    this.moviesService.getAll(this.page).subscribe(({results}) => this.movies = results);
+    this.moviesService.getAll(this.page).subscribe(({ results }) => this.movies = results);
 
   }
 
@@ -47,18 +48,18 @@ export class MoviesListComponent implements OnInit, AfterViewInit{
       return;
     }
     this.page += 1;
-    this.moviesService.getAll(this.totalPages).subscribe(({results}) => this.movies = results);
+    this.moviesService.getAll(this.page).subscribe(({ results }) => this.movies = results);
 
   }
 
   first_page() {
     this.page = 1;
-    this.moviesService.getAll(this.page).subscribe(({results}) => this.movies = results);
+    this.moviesService.getAll(this.page).subscribe(({ results }) => this.movies = results);
   }
 
   last_page() {
     this.page = this.totalPages;
-    this.moviesService.getAll(this.page).subscribe(({results}) => this.movies = results);
+    this.moviesService.getAll(this.totalPages).subscribe(({ results }) => this.movies = results);
   }
 
 

@@ -2,26 +2,32 @@ import { IMovie } from './movie.interface';
 
 
 export interface IMovieDetails extends IMovie {
+  genres: IGenre[];
   homepage: string;
-  production_companies: production_companies[];
-  production_countries: production_countries[];
-  spoken_languages: spoken_languages[];
+  production_companies: IProductionCompanies[];
+  production_countries: IProductionCountries[];
+  spoken_languages: ISpokenLanguages[];
   status: string;
   tagline: string;
 }
 
-interface production_companies {
+interface IGenre {
+  id: number;
+  name: string;
+}
+
+interface IProductionCompanies {
   id: number;
   name: string;
   origin_country: string;
 }
 
-interface production_countries {
+interface IProductionCountries {
   iso_3166_1: string;
   name: string;
 }
 
-interface spoken_languages {
+interface ISpokenLanguages {
   english_name: string;
   iso_639_1: string;
   name: string;

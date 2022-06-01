@@ -1,0 +1,19 @@
+#movieCard {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px;
+}
+mat-icon {
+  color: #ff9800;
+}
+.voteAverage, .title, .genres {
+  height: 50px;
+}
+.voteAverage {
+  align-items: center;
+}
+.title {
+  font-family: fantasy;
+}
