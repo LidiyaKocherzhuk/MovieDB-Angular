@@ -1,35 +1,36 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { MoviesService } from '../../services/movies.service';
-import { IMovie } from '../../interfaces/movie.interface';
-import { environment } from '../../../../../environments/environment';
+import {Component, OnInit, AfterViewInit} from '@angular/core';
+
+import {MoviesService} from '../../services/movies.service';
+import {IMovie} from '../../interfaces/movie.interface';
+import {environment} from '../../../../../environments/environment';
+import {DataService} from "../../services/data.service";
 
 @Component({
   selector: 'app-movies-list',
   templateUrl: './movies-list.component.html',
   styleUrls: ['./movies-list.component.css']
 })
-export class MoviesListComponent implements OnInit, OnChanges {
+export class MoviesListComponent implements OnInit, AfterViewInit{
 
   movies: IMovie[];
   imagePath: string = environment.imageApi;
   page: number = 1;
-  totalPages: number;
+  totalPages: number = 500;
+  title: string;
 
-  constructor(private moviesService: MoviesService) {
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.moviesService.getAll(this.page).subscribe(({ results, total_pages }) => {
-      this.movies = results;
-      this.totalPages = total_pages;
-    });
+  constructor(private moviesService: MoviesService, private dataService: DataService) {
   }
 
   ngOnInit(): void {
-    this.moviesService.getAll(this.page).subscribe(({ results, total_pages }) => {
-      this.movies = results;
-      this.totalPages = total_pages;
+    this.moviesService.getAll(this.page).subscribe(value =>  {
+      this.movies = value.results;
+      console.log(value)
+      console.log(value.results)
     });
+  }
+
+  ngAfterViewInit(): void {
+    this.dataService.storage.subscribe(value => this.title = value)
   }
 
   pageOneBtn() {
@@ -37,15 +38,29 @@ export class MoviesListComponent implements OnInit, OnChanges {
       return;
     }
     this.page -= 1;
-  }
+    this.moviesService.getAll(this.page).subscribe(({results}) => this.movies = results);
 
-  pageTwoBtn() {
   }
 
   pageThreeBtn() {
-    if (this.page > this.totalPages - 1) {
+    if (this.page >= this.totalPages) {
       return;
     }
     this.page += 1;
+    this.moviesService.getAll(this.totalPages).subscribe(({results}) => this.movies = results);
+
   }
+
+  first_page() {
+    this.page = 1;
+    this.moviesService.getAll(this.page).subscribe(({results}) => this.movies = results);
+  }
+
+  last_page() {
+    this.page = this.totalPages;
+    this.moviesService.getAll(this.page).subscribe(({results}) => this.movies = results);
+  }
+
+
+
 }

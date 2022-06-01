@@ -22,6 +22,7 @@
 .headerBlock div {
 
 }
+
 .headerBlock h2 {
   color: white;
   font-family: serif;
@@ -33,7 +34,8 @@
   display: flex;
   align-items: center;
 }
-.pathHome p{
+
+.pathHome p {
   margin: 0;
 }
 
@@ -63,8 +65,41 @@ mat-icon {
   margin: 20px 0;
 }
 
+.pagesBtn mat-icon, button {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #d5d5d5;
+  box-shadow: inset 0 0 5px 0 #dce6e4;
+}
+
 button {
-  width: 30px;
-  height: 30px;
-  margin: 5px;
+  background: none;
+  font-size: 20px;
+}
+
+.pagesBtn mat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+}
+
+.active {
+  box-shadow: inset 0 0 11px 0 #ddc8c8;
+}
+
+.btnIcon {
+  width: 50px !important;
+}
+
+.first {
+  border-radius: 20px 0 0 20px;
+}
+
+.last {
+  border-radius: 0 20px 20px 0;
+}
+
+.pagesBtn mat-icon:hover, button:hover {
+  color: #4eb4fc;
 }

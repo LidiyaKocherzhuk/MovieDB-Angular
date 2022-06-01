@@ -1,4 +1,4 @@
-<div id="movieList">
+<div id="movieList"  *ngIf="movies">
   <div class="headerBlock" [ngStyle]="{'background-image':'url('+ imagePath+movies[0].poster_path +')' }">
     <img
       src="https://img.icons8.com/external-icongeek26-outline-gradient-icongeek26/64/000000/external-video-camera-retro-icongeek26-outline-gradient-icongeek26.png"
@@ -22,9 +22,13 @@
     </div>
 
     <div class="pagesBtn">
-      <button (click)="pageOneBtn()">{{page === 1 ? '...' : page-1}}</button>
-      <button (click)="pageTwoBtn()">{{page}}</button>
-      <button (click)="pageThreeBtn()">{{page + 1}}</button>
+      <mat-icon class="btnIcon first" (click)="first_page()">first_page</mat-icon>
+      <mat-icon (click)="pageOneBtn()">chevron_left</mat-icon>
+      <button *ngIf="page>1" (click)="pageOneBtn()">{{page <= 1 ? page : page-1}}</button>
+      <button class="active">{{page}}</button>
+      <button *ngIf="page<totalPages" (click)="pageThreeBtn()">{{page + 1}}</button>
+      <mat-icon (click)="pageThreeBtn()">chevron_right</mat-icon>
+      <mat-icon class="btnIcon last" (click)="last_page()">last_page</mat-icon>
     </div>
 
   </div>
