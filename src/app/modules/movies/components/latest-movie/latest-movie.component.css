@@ -43,3 +43,10 @@ button {
   margin: 10px 0 20px;
   display: flex;
 }
+
+.posterBottom {
+  height: 70px;
+  background-size: cover;
+  background-position: center;
+  margin: 50px 0;
+}

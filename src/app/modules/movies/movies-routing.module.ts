@@ -4,20 +4,20 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LayoutComponent } from './myLayout/layout/layout.component';
+import { HomeComponent } from './myLayout/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
 import { MoviesListCardComponent } from './components/movies-list-card/movies-list-card.component';
-import { PosterPreviewComponent } from './components/poster-preview/poster-preview.component';
 import { StarsRatingComponent } from './components/stars-rating/stars-rating.component';
 import { MovieInfoComponent } from './components/movie-info/movie-info.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { GenreComponent } from './components/genre/genre.component';
 import { SlideMenuComponent } from './components/slide-menu/slide-menu.component';
 import { LatestMovieComponent } from './components/latest-movie/latest-movie.component';
-import { HomeComponent } from './myLayout/home/home.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
-import { MovieDetailsResolver } from './services/resolver/movie-details.resolver';
-import {FooterComponent} from "./components/footer/footer.component";
+import { FooterComponent } from './components/footer/footer.component';
+import { InterestingComponent } from './components/interesting/interesting.component';
+import { MovieDetailsResolver } from './services';
 
 
 const routes: Routes = [
@@ -41,7 +41,6 @@ const routes: Routes = [
     HeaderComponent,
     MoviesListComponent,
     MoviesListCardComponent,
-    PosterPreviewComponent,
     StarsRatingComponent,
     MovieInfoComponent,
     UserInfoComponent,
@@ -52,6 +51,7 @@ const routes: Routes = [
     HomeComponent,
     MovieCardComponent,
     FooterComponent,
+    InterestingComponent
   ],
   imports: [
     BrowserModule,

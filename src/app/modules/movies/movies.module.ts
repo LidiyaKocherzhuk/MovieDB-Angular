@@ -21,7 +21,8 @@ import { MoviesService, DataService, MovieDetailsResolver, PersonResolver } from
     DataService,
     MovieDetailsResolver,
     PersonResolver,
-  ]
+  ],
+
 })
 export class MoviesModule {
 }

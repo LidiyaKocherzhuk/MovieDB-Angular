@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
-import { IMovieDetails } from '../../interfaces/movieDetails.interface';
+import { IMovieDetails } from '../../interfaces';
+import { MoviesService } from '../../services';
 import { environment } from '../../../../../environments/environment';
-import { MoviesService } from '../../services/movies.service';
 
 @Component({
   selector: 'app-movie-info',
@@ -18,11 +18,10 @@ export class MovieInfoComponent implements OnInit {
   constructor(private moviesService: MoviesService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.moviesService.getDetails(5000).subscribe(value => this.movie=value);
-    // this.activatedRoute.data.subscribe(({ movie}) => {
-    //   console.log(data);
-    //   this.movie = data;
-    // })
+    // this.moviesService.getDetails(5000).subscribe(value => this.movie=value);
+    this.activatedRoute.data.subscribe(({ movie }) => {
+      this.movie = movie;
+    })
   }
 
 }
