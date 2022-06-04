@@ -1,5 +1,5 @@
 #spotlight {
-  width: 80%;
+  width: 90%;
 }
 .blockHeader, .blockHeader div, a {
   display: flex;
@@ -22,10 +22,15 @@
   width: 20%;
   justify-content: end;
 }
-mat-icon {
-  height: 20px;
-  color: cornflowerblue;
+
+.blockHeader mat-icon {
+  height: 22px;
 }
+
+.blockHeader a:hover, mat-icon:hover {
+  color: #ff5900;
+}
+
 hr {
   margin: 0;
 }

@@ -1,4 +1,8 @@
+export interface IGenres {
+  genres: IGenre[];
+}
+
 export interface IGenre {
-  id: string;
+  id: number;
   name: string;
 }

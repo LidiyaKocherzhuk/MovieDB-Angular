@@ -8,7 +8,7 @@
       <h2>Movie List</h2>
       <div class="pathHome">
         <mat-icon>home</mat-icon>
-        <p><a [routerLink]="['home']"> / home </a>/ movieList</p></div>
+        <p><a [routerLink]="['home']"> / home </a>/ movieList<span *ngIf="genreName"> / {{genreName}}</span></p></div>
     </div>
 
   </div>
@@ -18,7 +18,7 @@
     <div class="sort"></div>
 
     <div class="movies">
-      <app-movie-card *ngFor="let movie of movies" [id]="movie.id"></app-movie-card>
+        <app-movie-card *ngFor="let movie of movies" [movie]="movie"></app-movie-card>
     </div>
 
     <div class="pagesBtn">

@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IMovie } from '../../interfaces/movie.interface';
+
 import { environment } from '../../../../../environments/environment';
 import { MoviesService } from '../../services/movies.service';
-import {IMovieDetails} from "../../interfaces/movieDetails.interface";
+import { IMovieDetails } from '../../interfaces/movieDetails.interface';
+import {IMovie} from "../../interfaces/movie.interface";
 
 @Component({
   selector: 'app-movie-card',
@@ -12,15 +13,13 @@ import {IMovieDetails} from "../../interfaces/movieDetails.interface";
 export class MovieCardComponent implements OnInit {
 
   @Input()
-    id: number;
-  movie: IMovieDetails;
+    movie: IMovie;
   imagePath: string = environment.imageApi;
 
-  constructor(private moviesService: MoviesService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.moviesService.getDetails(this.id).subscribe(value => this.movie = value )
   }
 
 }

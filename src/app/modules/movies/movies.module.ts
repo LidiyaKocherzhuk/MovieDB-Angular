@@ -4,24 +4,23 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MoviesRoutingModule } from './movies-routing.module';
-import { MoviesService } from './services/movies.service';
-import { DataService } from './services/data.service';
-import {MovieDetailsResolver} from "./services/resolver/movie-details.resolver";
+import { MoviesService, DataService, MovieDetailsResolver, PersonResolver } from './services';
+
 
 @NgModule({
-  declarations: [
-  ],
+
   imports: [
     BrowserModule,
     CommonModule,
     HttpClientModule,
     MoviesRoutingModule,
-
   ],
+
   providers: [
     MoviesService,
     DataService,
     MovieDetailsResolver,
+    PersonResolver,
   ]
 })
 export class MoviesModule {

@@ -3,8 +3,65 @@
   <div class="poster" [ngStyle]="{'background-image': 'url(' + imagePath + movie.backdrop_path + ')'}">
 
   </div>
-  <div class="description">
-    <img src="{{imagePath+movie.poster_path}}" alt="">
 
+  <div id="description">
+
+    <div class="left_bloc">
+
+      <img src="{{imagePath+movie.poster_path}}" alt="">
+
+      <div class="desc_bottom">
+        <h4>Movie Info</h4>
+        <p><strong>Release Date: </strong> {{movie.release_date}}</p>
+
+        <div>
+          <strong>Production Companies: </strong>
+          <span *ngFor="let companies of movie.production_companies">{{companies.name}}</span>
+        </div>
+
+        <div>
+          <strong>Genres: </strong>
+          <span class="genres" *ngFor="let genre of movie.genres">{{genre.name}}, </span>
+        </div>
+
+        <div>
+          <strong>Spoken Languages: </strong>
+          <span class="" *ngFor="let language of movie.spoken_languages">{{language.name}}, </span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="right_bloc">
+
+      <div class="right_bloc_top">
+        <div class="desc_right">
+          <h4>{{movie.title}}({{movie.release_date}})</h4>
+          <div><span class="genres" *ngFor="let genre of movie.genres">{{genre.name}}, </span></div>
+          <div class="ratingStars">
+
+
+          </div>
+        </div>
+
+        <div class="ratingStar">
+          <div class="star">
+            <mat-icon>star_border</mat-icon>
+            <span>5</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="overview">
+        <div class="d-flex" >
+          <img src="https://img.icons8.com/nolan/64/open-book.png" alt="book"/>
+          <h3>{{movie.tagline}}</h3>
+        </div>
+        <p>{{movie.overview}}</p>
+      </div>
+
+    </div>
   </div>
+
 </div>

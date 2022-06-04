@@ -1,3 +1,8 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
 #movieCard {
   width: 250px;
   display: flex;

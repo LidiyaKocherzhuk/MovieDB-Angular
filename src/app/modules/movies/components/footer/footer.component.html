@@ -1,0 +1,52 @@
+<div id="footer">
+  <div class="topBloc">
+
+    <div>
+      <div class="glasses">
+        <mat-icon class="w-40">subscriptions</mat-icon>
+        <p>Movies Category</p>
+      </div>
+      <div class="genres">
+        <div *ngFor="let genre of genres">
+          <p (click)="getMovieByGenre(genre)">{{genre.name}}</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div>
+      <div class="newsletter">
+        <mat-icon class="w-40">drafts</mat-icon>
+        <p>Newsletter</p>
+      </div>
+      <div class="email">
+        <p>Subscribe now to get 100 exclusive photo & two newsletters per month</p>
+
+        <div>
+          <input type="text" placeholder="E-Mail">
+          <button>
+            <mat-icon>arrow_right_alt</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="speaker">
+        <mat-icon class="w-40">shop_two</mat-icon>
+        <p>Moview Everywhere</p>
+      </div>
+      <div class="images">
+        <img src="https://demo.joomshaper.com/2016/moview/images/demo/bottom4-add2.png" alt="">
+        <img src="https://demo.joomshaper.com/2016/moview/images/demo/bottom4-add1.png" alt="">
+        <img src="https://demo.joomshaper.com/2016/moview/images/demo/bottom4-add3.png" alt="">
+        <img src="https://demo.joomshaper.com/2016/moview/images/demo/bottom4-add4.png" alt="">
+      </div>
+    </div>
+
+  </div>
+  <hr>
+  <div class="copyright">
+    <p>Copyright 2016 © Moview. All Rights Reserved.</p>
+  </div>
+</div>

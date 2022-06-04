@@ -1,0 +1,97 @@
+#footer {
+  background-image: url("https://image.tmdb.org/t/p/original/7ucaMpXAmlIM24qZZ8uI9hCY0hm.jpg");
+  opacity: 0.9;
+  background-position: center;
+  background-size: cover;
+  box-shadow: inset 0 22rem 15rem black;
+  height: 60vh;
+  padding: 0 5% 0 5%;
+}
+
+.topBloc {
+  display: flex;
+  justify-content: space-between;
+}
+
+.newsletter, .glasses, .speaker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: white;
+  font-family: initial;
+  font-size: 25px;
+}
+
+.w-40 {
+  width: 40px;
+  height: 40px;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.genres div {
+  width: 50%;
+  height: 25px;
+  color: white;
+}
+.genres p {
+  cursor: pointer;
+  width: fit-content;
+}
+.genres p:hover {
+  color: #ff5900;
+}
+
+.email {
+  color: white;
+  padding-right: 15%;
+}
+
+.email div {
+  display: flex;
+  box-shadow: 0 0 5px 2px black;
+  background: #ffffff1a;
+}
+
+.email button, input {
+  border: none;
+  background: none;
+  padding-left: 5px;
+}
+
+.email button {
+  display: flex;
+  align-items: center;
+  color: white;
+  width: 10%;
+}
+.email button:hover {
+  color: #ff5900;
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.images img {
+  width: 40%;
+  margin: 5px;
+  cursor: pointer;
+}
+
+hr {
+  color: white;
+}
+
+.copyright p {
+  color: rgb(255 255 255 / 56%);
+  text-align: end;
+  font-size: 14px;
+}

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { MoviesService } from '../../services/movies.service';
 import { DataService } from '../../services/data.service';
+import { IGenre } from '../../interfaces/genre.interface';
 
 @Component({
   selector: 'app-header',
@@ -11,21 +12,14 @@ import { DataService } from '../../services/data.service';
 })
 export class HeaderComponent implements OnInit {
 
-  genres: any;
-  move = false;
+  genres: IGenre[];
 
   constructor(private moviesService: MoviesService, private dataService: DataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.moviesService.getGenres().subscribe(value => this.genres = value.genres);
-  }
-
-  showGenres() {
-    this.move = !this.move;
-  }
-
-  closeGenres() {
-    this.move = !this.move;
+    this.moviesService.getGenres().subscribe(({ genres }) => {
+      this.genres = genres;
+    });
   }
 
   searchMovie(searchInput: HTMLInputElement) {

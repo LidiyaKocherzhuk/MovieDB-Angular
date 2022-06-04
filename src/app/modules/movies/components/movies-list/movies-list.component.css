@@ -49,7 +49,7 @@ mat-icon {
 }
 
 .moviesBlock {
-  width: 80%;
+  width: 90%;
 }
 
 .movies {
@@ -82,6 +82,7 @@ button {
   align-items: center;
   justify-content: center;
   font-size: 23px;
+  cursor: pointer;
 }
 
 .active {

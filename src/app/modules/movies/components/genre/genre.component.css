@@ -1,5 +1,9 @@
-a {
+div {
   padding: 3px;
   border-radius: 3px;
   box-shadow: 0 0 10px 0 #58585878;
+  color: white;
+}
+div:hover {
+  color: #f57a43;
 }

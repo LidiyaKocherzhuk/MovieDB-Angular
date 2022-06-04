@@ -1,7 +1,18 @@
 <div class="movieCard {{status ? 'latestMovie' : ''}}" [ngStyle]="{
-'background-image': 'url(' + imagePath + movie.backdrop_path + ')', 'width': innerWidth + 'px'}" >
-  <a [routerLink]="['/details']" [state]="{data: movie.id}"><mat-icon>play_circle_outline</mat-icon></a>
-  <div class="voteAverage d-flex"><mat-icon class="star">star</mat-icon>{{movie.vote_average}}/{{movie.vote_count}}</div>
+'background-image': 'url(' + imagePath + movie.backdrop_path + ')', 'width': innerWidth + 'px'}">
+
+  <div class="detailNav">
+    <a [routerLink]="['/details']" [state]="{data: movie.id}">
+      <mat-icon>visibility</mat-icon>
+    </a>
+  </div>
+
+  <div class="voteAverage d-flex">
+    <mat-icon class="star">star</mat-icon>
+    {{movie.vote_average}}/{{movie.vote_count}}
+  </div>
+
   <h4 class="title">{{movie.title}}</h4>
   <p>release: {{movie.release_date}}</p>
+
 </div>
