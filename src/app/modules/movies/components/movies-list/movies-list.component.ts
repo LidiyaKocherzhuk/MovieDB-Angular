@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {MoviesService} from '../../services/movies.service';
-import {IMovie} from '../../interfaces/movie.interface';
-import {environment} from '../../../../../environments/environment';
-import {DataService} from '../../services/data.service';
+import { MoviesService, DataService } from '../../services';
+import { IMovie } from '../../interfaces';
+import { environment } from '../../../../../environments/environment';
+import { charactersForSearch } from '../../characters/charactersForSearch';
 
 @Component({
   selector: 'app-movies-list',
@@ -16,6 +16,7 @@ export class MoviesListComponent implements OnInit {
   page: number = 1;
   genreName: string;
   imagePath: string = environment.imageApi;
+  characters: string[] = charactersForSearch;
   totalPages: number = 500;
 
   constructor(private moviesService: MoviesService, private dataService: DataService) {
@@ -30,6 +31,7 @@ export class MoviesListComponent implements OnInit {
       if (value) {
         this.moviesService.search(this.page, value).subscribe(value => this.movies = value.results);
       }
+      window.scrollTo(0, 0);
     });
 
     this.dataService.genre.subscribe(value => {
@@ -46,38 +48,47 @@ export class MoviesListComponent implements OnInit {
 
   }
 
-  pageOneBtn() {
+  getAllMovies() {
+    this.moviesService.getAll(this.page).subscribe(value => {
+      this.movies = value.results;
+    });
+  }
 
+  searchMovies(character: string) {
+    this.dataService.storage.next(character);
+  }
+
+  pageOneBtn() {
     if (this.page === 1) {
       return;
     }
 
     this.page -= 1;
-    this.moviesService.getAll(this.page).subscribe(({results}) => this.movies = results);
+    this.moviesService.getAll(this.page).subscribe(({ results }) => this.movies = results);
     window.scrollTo(0, 0);
   }
 
   pageThreeBtn() {
-
     if (this.page >= this.totalPages) {
       return;
     }
 
     this.page += 1;
-    this.moviesService.getAll(this.page).subscribe(({results}) => this.movies = results);
+    this.moviesService.getAll(this.page).subscribe(({ results }) => this.movies = results);
     window.scrollTo(0, 0);
   }
 
   first_page() {
     this.page = 1;
-    this.moviesService.getAll(this.page).subscribe(({results}) => this.movies = results);
+    this.moviesService.getAll(this.page).subscribe(({ results }) => this.movies = results);
     window.scrollTo(0, 0);
   }
 
   last_page() {
     this.page = this.totalPages;
-    this.moviesService.getAll(this.totalPages).subscribe(({results}) => this.movies = results);
+    this.moviesService.getAll(this.totalPages).subscribe(({ results }) => this.movies = results);
     window.scrollTo(0, 0);
   }
+
 
 }

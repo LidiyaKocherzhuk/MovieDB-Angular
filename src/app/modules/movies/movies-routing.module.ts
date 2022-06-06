@@ -10,13 +10,15 @@ import { MoviesListComponent } from './components/movies-list/movies-list.compon
 import { MoviesListCardComponent } from './components/movies-list-card/movies-list-card.component';
 import { StarsRatingComponent } from './components/stars-rating/stars-rating.component';
 import { MovieInfoComponent } from './components/movie-info/movie-info.component';
-import { UserInfoComponent } from './components/user-info/user-info.component';
 import { GenreComponent } from './components/genre/genre.component';
 import { SlideMenuComponent } from './components/slide-menu/slide-menu.component';
 import { LatestMovieComponent } from './components/latest-movie/latest-movie.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { InterestingComponent } from './components/interesting/interesting.component';
+import { IntrestingCardComponent } from './components/intresting-card/intresting-card.component';
+import { ActorsComponent } from './components/actors/actors.component';
+import { ActorCardComponent } from './components/actor-card/actor-card.component';
 import { MovieDetailsResolver } from './services';
 
 
@@ -43,7 +45,6 @@ const routes: Routes = [
     MoviesListCardComponent,
     StarsRatingComponent,
     MovieInfoComponent,
-    UserInfoComponent,
     GenreComponent,
     LayoutComponent,
     LatestMovieComponent,
@@ -51,7 +52,11 @@ const routes: Routes = [
     HomeComponent,
     MovieCardComponent,
     FooterComponent,
-    InterestingComponent
+    InterestingComponent,
+    IntrestingCardComponent,
+    ActorsComponent,
+    ActorCardComponent
+
   ],
   imports: [
     BrowserModule,

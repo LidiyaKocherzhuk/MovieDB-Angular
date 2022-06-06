@@ -5,8 +5,9 @@ import {
   ActivatedRouteSnapshot
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
+
 import { MoviesService } from '../movies.service';
-import { IMovieDetails } from '../../interfaces/movieDetails.interface';
+import { IMovieDetails } from '../../interfaces';
 
 @Injectable({
   providedIn: 'root'

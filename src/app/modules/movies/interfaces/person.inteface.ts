@@ -1,4 +1,5 @@
 export interface IPerson {
+  id: number;
   birthday: string;
   deathday?: string;
   name: string;

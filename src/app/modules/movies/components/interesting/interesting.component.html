@@ -1,31 +1,28 @@
 <div id="animationBloc">
-  <div class="leftBloc">
-    <span [ngStyle]="{'background-image':'url('+ imagePath+movies[0].backdrop_path +')' }"></span>
-    <img src="{{imagePath+movies[0].backdrop_path}}" alt="animation">
-    <h5>{{movies[0].title}}</h5>
-    <p>Release: date {{movies[0].release_date}}</p>
+
+  <div class="animationHeader">
+    <img src="https://img.icons8.com/nolan/64/animation.png" alt="animation"/>
+    <h4>Interesting For Children</h4>
   </div>
-  <div class="rightBloc">
-    <div>
-      <span [ngStyle]="{'background-image':'url('+ imagePath+movies[1].poster_path +')' }"></span>
-      <div>
-        <h5>{{movies[1].title}}</h5>
-        <p>Release date: {{movies[1].release_date}}</p>
-      </div>
+
+  <hr>
+
+  <div class="animation">
+
+    <div class="leftBloc">
+      <a [routerLink]="['/details']" [state]="{data: movies[0].id}">
+        <div [ngStyle]="{'background-image':'url('+ imagePath+movies[0].backdrop_path +')' }"></div>
+      </a>
+      <app-stars-rating [rating]="movies[0].vote_average"></app-stars-rating>
+      <h5><a [routerLink]="['/details']" [state]="{data: movies[0].id}">{{movies[0].title}}</a></h5>
+      <p>Release: date {{movies[0].release_date}}</p>
     </div>
-    <div>
-      <span [ngStyle]="{'background-image':'url('+ imagePath+movies[2].poster_path +')' }"></span>
-      <div>
-        <h5>{{movies[2].title}}</h5>
-        <p>Release date: {{movies[2].release_date}}</p>
-      </div>
+
+    <div class="rightBloc">
+      <app-intresting-card [movie]="movies[1]"></app-intresting-card>
+      <app-intresting-card [movie]="movies[2]"></app-intresting-card>
+      <app-intresting-card [movie]="movies[3]"></app-intresting-card>
     </div>
-    <div>
-      <span [ngStyle]="{'background-image':'url('+ imagePath+movies[3].poster_path +')' }"></span>
-      <div>
-        <h5>{{movies[3].title}}</h5>
-        <p>Release date: {{movies[3].release_date}}</p>
-      </div>
-    </div>
+
   </div>
 </div>

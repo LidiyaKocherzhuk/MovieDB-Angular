@@ -1,0 +1,16 @@
+.cardActor {
+  display: flex;
+  margin: 10px;
+}
+
+img{
+  width: 30%;
+}
+
+.description {
+  margin: 20px;
+}
+
+.description:hover h5 {
+  color: #ff5900;
+}

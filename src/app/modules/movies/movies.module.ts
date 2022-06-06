@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MoviesRoutingModule } from './movies-routing.module';
-import { MoviesService, DataService, MovieDetailsResolver, PersonResolver } from './services';
+import { MoviesService, DataService, MovieDetailsResolver } from './services';
 
 
 @NgModule({
@@ -20,7 +20,6 @@ import { MoviesService, DataService, MovieDetailsResolver, PersonResolver } from
     MoviesService,
     DataService,
     MovieDetailsResolver,
-    PersonResolver,
   ],
 
 })

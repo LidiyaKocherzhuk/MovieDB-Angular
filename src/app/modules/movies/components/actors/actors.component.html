@@ -1,0 +1,39 @@
+<div id="actorsBloc">
+
+  <div class="actorHeader"><img
+    src="https://img.icons8.com/external-icongeek26-outline-gradient-icongeek26/64/undefined/external-director-chair-cinema-icongeek26-outline-gradient-icongeek26-1.png"
+    alt="actorChair"/>
+    <h4>About Actors</h4>
+  </div>
+
+  <hr>
+
+  <div class="actors">
+
+    <div class="leftBloc">
+      <img src="{{imagePath+actorBiography.profile_path}}" alt="">
+      <h2>{{actorBiography.name}}</h2>
+      <p><strong>Place of birth: </strong> {{actorBiography.place_of_birth}}</p>
+      <p><strong>Birthday: </strong> {{actorBiography.birthday}}</p>
+      <p *ngIf="actorBiography.deathday"><strong>Deathday: </strong> {{actorBiography.deathday}}</p>
+      <p class="biography"><strong>Biography: </strong> {{actorBiography.biography}}</p>
+    </div>
+
+    <div class="rightBloc">
+
+      <button (click)="getBiography(actors[1])">
+        <app-actor-card [actor]="actors[1]"></app-actor-card>
+      </button>
+
+      <button (click)="getBiography(actors[2])">
+        <app-actor-card [actor]="actors[2]"></app-actor-card>
+      </button>
+
+      <button (click)="getBiography(actors[3])">
+        <app-actor-card [actor]="actors[3]"></app-actor-card>
+      </button>
+
+    </div>
+
+  </div>
+</div>

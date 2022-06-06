@@ -27,7 +27,6 @@ mat-icon {
   border-radius: 50%;
   font-size: 80px;
   color: #ffffff4d;
-  /*text-shadow: 0 0 20px white;*/
 }
 mat-icon:hover {
   color: white;

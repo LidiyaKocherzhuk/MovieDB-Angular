@@ -1,0 +1,62 @@
+#actorsBloc {
+  width: 90%;
+}
+
+.actorHeader {
+  display: flex;
+  align-items: end;
+}
+
+.actorHeader img {
+  width: 50px;
+  margin-right: 20px;
+}
+
+.actors {
+  display: flex;
+  margin: 50px 0;
+}
+
+.leftBloc {
+  width: 45%;
+}
+
+
+.leftBloc img {
+  width: 50%;
+  position: center;
+}
+
+.leftBloc h2 {
+  text-align: center;
+  margin: 10px 0;
+  font-style: italic;
+  font-family: ui-monospace;
+}
+
+.biography {
+  height: 300px;
+  overflow: auto;
+}
+
+.biography::-webkit-scrollbar {
+  width: 10px;
+}
+
+.biography::-webkit-scrollbar-thumb {
+  border-radius: 16px;
+  box-shadow: inset 2px 2px 2px hsl(0deg 0% 100% / 25%), inset -2px -2px 2px rgb(0 0 0 / 25%);
+}
+
+.rightBloc {
+  width: 50%;
+  padding-left: 20px;
+}
+
+button {
+  border: none;
+}
+
+hr {
+  margin: 0;
+}

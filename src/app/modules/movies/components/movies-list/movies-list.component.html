@@ -1,4 +1,4 @@
-<div id="movieList"  *ngIf="movies">
+<div id="movieList" *ngIf="movies">
   <div class="headerBlock" [ngStyle]="{'background-image':'url('+ imagePath+movies[0].poster_path +')' }">
     <img
       src="https://img.icons8.com/external-icongeek26-outline-gradient-icongeek26/64/000000/external-video-camera-retro-icongeek26-outline-gradient-icongeek26.png"
@@ -8,23 +8,29 @@
       <h2>Movie List</h2>
       <div class="pathHome">
         <mat-icon>home</mat-icon>
-        <p><a [routerLink]="['home']"> / home </a>/ movieList<span *ngIf="genreName"> / {{genreName}}</span></p></div>
+        <p><a [routerLink]="['/home']"> / home </a>/ movieList<span *ngIf="genreName"> / {{genreName}}</span></p></div>
     </div>
 
   </div>
 
   <div class="moviesBlock">
 
-    <div class="sort"></div>
+    <div class="sort">
+      <img
+        src="https://img.icons8.com/external-icongeek26-outline-gradient-icongeek26/64/undefined/external-binoculars-cinema-icongeek26-outline-gradient-icongeek26.png"
+        alt="binoculars"/>
+      <button (click)="getAllMovies()">All</button>
+      <button *ngFor="let character of characters" (click)="searchMovies(character)">{{character}}</button>
+    </div>
 
     <div class="movies">
-        <app-movie-card *ngFor="let movie of movies" [movie]="movie"></app-movie-card>
+      <app-movie-card *ngFor="let movie of movies" [movie]="movie"></app-movie-card>
     </div>
 
     <div class="pagesBtn">
       <mat-icon class="btnIcon first" (click)="first_page()">first_page</mat-icon>
       <mat-icon (click)="pageOneBtn()">chevron_left</mat-icon>
-      <button *ngIf="page>1" (click)="pageOneBtn()">{{page <= 1 ? page : page-1}}</button>
+      <button *ngIf="page>1" (click)="pageOneBtn()">{{page <= 1 ? page : page - 1}}</button>
       <button class="active">{{page}}</button>
       <button *ngIf="page<totalPages" (click)="pageThreeBtn()">{{page + 1}}</button>
       <mat-icon (click)="pageThreeBtn()">chevron_right</mat-icon>

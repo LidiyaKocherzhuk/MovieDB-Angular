@@ -1,0 +1,13 @@
+<div class="cardActor">
+  <img src="{{imagePath+actor.profile_path}}" alt="actor">
+
+  <div class="description">
+
+    <h5>{{actor.name}}</h5>
+    <p>Place of birth: {{actor.place_of_birth}}</p>
+    <p> Birthday: {{actor.birthday}}</p>
+    <p *ngIf="actor.deathday"> Deathday: {{actor.deathday}}</p>
+
+  </div>
+
+</div>

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { environment } from '../../../../../environments/environment';
-import { IMovie } from '../../interfaces/movie.interface';
+import { IMovie } from '../../interfaces';
 
 @Component({
   selector: 'app-movies-list-card',

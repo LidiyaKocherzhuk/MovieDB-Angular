@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {DataService, MoviesService} from "../../services";
-import {IGenre} from "../../interfaces";
-import {Router} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { DataService, MoviesService } from '../../services';
+import { IGenre } from '../../interfaces';
 
 @Component({
   selector: 'app-footer',
@@ -21,7 +22,7 @@ export class FooterComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.moviesService.getGenres().subscribe(({genres}) => {
+    this.moviesService.getGenres().subscribe(({ genres }) => {
       this.genres = genres;
     });
   }

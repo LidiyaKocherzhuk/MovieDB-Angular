@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { MoviesService } from '../../services';
 import { IMovie } from '../../interfaces';
-import {environment} from "../../../../../environments/environment";
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-latest-movie',

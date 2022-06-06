@@ -14,7 +14,7 @@
   background-size: cover;
   background-position: top;
   box-shadow: inset 0 -15rem 15rem black;
-  margin-bottom: 100vh;
+  margin-bottom: 120vh;
 }
 
 #description {
@@ -47,6 +47,7 @@
   color: white;
   padding-left: 15px;
   width: 50%;
+  justify-content: center;
 }
 
 .ratingStar {
@@ -66,8 +67,8 @@
 }
 
 .star mat-icon {
-  color: #ff5900;
-  font-size: 100px;
+  color: #ff5900bf;
+  font-size: 150px;
   width: fit-content;
   height: fit-content;
 }
@@ -91,4 +92,38 @@
 
 .overview p{
   text-align: center;
+}
+
+.video {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video a {
+  position: absolute;
+  width: fit-content;
+}
+
+.video mat-icon {
+  font-size: 80px;
+  color: white;
+  text-shadow: 0 0 5px white;
+  height: fit-content;
+  width: fit-content;
+  border-radius: 50%;
+}
+.video mat-icon:hover {
+  box-shadow: 0 0 15px 0 white;
+}
+
+.frame {
+  height: 400px;
+  background: #111111;
+}
+.frameZ111 {
+  height: 400px;
+  z-index: 111;
 }

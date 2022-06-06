@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { MoviesService } from '../../services/movies.service';
-import { DataService } from '../../services/data.service';
-import { IGenre } from '../../interfaces/genre.interface';
+import { MoviesService, DataService } from '../../services';
+import { IGenre } from '../../interfaces';
 
 @Component({
   selector: 'app-header',

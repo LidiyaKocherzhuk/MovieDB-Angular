@@ -1,0 +1,12 @@
+#starsRating {
+  display: flex;
+  margin-top: 20px;
+}
+
+#starsRating div {
+  width: fit-content;
+}
+
+mat-icon {
+  color: #ff5900;
+}

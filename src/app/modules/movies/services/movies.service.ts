@@ -1,13 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { urls } from '../config/urls';
-import { IPage } from '../interfaces/page.inteface';
-import { IGenre, IGenres } from '../interfaces/genre.interface';
+import { IPage, IGenres,  IMovieDetails,  IPerson,  IVideoPage, } from '../interfaces';
 import { environment } from '../../../../environments/environment';
-import { IMovieDetails } from '../interfaces/movieDetails.interface';
-import { IPerson } from '../interfaces/person.inteface';
 
 @Injectable({
   providedIn: 'root'
@@ -45,10 +42,6 @@ export class MoviesService {
     return this.httpClient.get<IGenres>(urls.genres);
   }
 
-  getGenreById(id:number): Observable<IGenre> {
-    return this.httpClient.get<IGenre>(`${urls.genres}/${id}`)
-  }
-
   search(page: number, query: string | number): Observable<IPage> {
     return this.httpClient.get<IPage>(`${urls.search}&page=${page}&query=${query}`)
   }
@@ -59,5 +52,9 @@ export class MoviesService {
 
   getPerson(id: number): Observable<IPerson> {
     return this.httpClient.get<IPerson>(`${environment.API}/person/${id}?api_key=${environment.apiKey}`)
+  }
+
+  getVideo(id: number): Observable<IVideoPage> {
+    return this.httpClient.get<IVideoPage>(`${environment.API}/movie/${id}/videos?api_key=${environment.apiKey}`)
   }
 }

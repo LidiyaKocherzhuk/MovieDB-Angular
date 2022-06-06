@@ -1,0 +1,13 @@
+<div class="cardMovie">
+
+  <a [routerLink]="['/details']" [state]="{data: movie.id}">
+    <div class="image" [ngStyle]="{'background-image':'url('+ imagePath+movie.poster_path +')' }"></div>
+  </a>
+
+  <div class="description">
+    <h5><a [routerLink]="['/details']" [state]="{data: movie.id}">{{movie.title}}</a></h5>
+    <p>Release date: {{movie.release_date}}</p>
+    <div>Rating: {{movie.vote_average}}<mat-icon>star</mat-icon></div>
+  </div>
+
+</div>

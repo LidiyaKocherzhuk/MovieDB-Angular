@@ -5,7 +5,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-app-latest-movie, app-interesting {
+app-latest-movie, app-interesting, app-actors {
   display: flex;
   justify-content: center;
 }

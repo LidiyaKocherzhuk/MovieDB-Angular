@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { IMovie } from '../../interfaces/movie.interface';
+import { IMovie } from '../../interfaces';
 
 @Component({
   selector: 'app-slide-menu',

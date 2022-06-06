@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IGenre } from '../../interfaces/genre.interface';
-import {DataService} from "../../services/data.service";
-import {Router} from "@angular/router";
+import { Router } from '@angular/router';
+
+import { IGenre } from '../../interfaces';
+import { DataService } from '../../services';
 
 @Component({
   selector: 'app-genre',
